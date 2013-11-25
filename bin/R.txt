@@ -57,13 +57,19 @@ int drawable ic_plusone_medium_off_client 0x7f020019
 int drawable ic_plusone_small_off_client 0x7f02001a
 int drawable ic_plusone_standard_off_client 0x7f02001b
 int drawable ic_plusone_tall_off_client 0x7f02001c
-int id action_settings 0x7f050006
+int id action_settings 0x7f05000c
 int id hybrid 0x7f050004
-int id map 0x7f050005
+int id lblClosestTarget 0x7f050009
+int id lblLastVisited 0x7f050007
+int id lblMostVisited 0x7f050005
+int id map 0x7f05000b
 int id none 0x7f050000
 int id normal 0x7f050001
 int id satellite 0x7f050002
 int id terrain 0x7f050003
+int id txtClosestTarget 0x7f05000a
+int id txtLastVisited 0x7f050008
+int id txtMostVisited 0x7f050006
 int integer google_play_services_version 0x7f070000
 int layout activity_map 0x7f030000
 int layout activity_my_location 0x7f030001
@@ -81,6 +87,7 @@ int string auth_client_needs_update_title 0x7f060017
 int string auth_client_play_services_err_notification_msg 0x7f060018
 int string auth_client_requested_by_msg 0x7f060019
 int string auth_client_using_bad_version_title 0x7f060014
+int string closest_target 0x7f060021
 int string common_google_play_services_enable_button 0x7f060006
 int string common_google_play_services_enable_text 0x7f060005
 int string common_google_play_services_enable_title 0x7f060004
@@ -101,10 +108,11 @@ int string common_google_play_services_update_text 0x7f060008
 int string common_google_play_services_update_title 0x7f060007
 int string common_signin_button_text 0x7f060012
 int string common_signin_button_text_long 0x7f060013
-int string hello_world 0x7f06001c
-int string title_activity_map 0x7f06001d
-int string title_activity_stats 0x7f06001e
-int string title_activity_target 0x7f06001f
+int string last_visited 0x7f060020
+int string most_visited 0x7f06001f
+int string title_activity_map 0x7f06001c
+int string title_activity_stats 0x7f06001d
+int string title_activity_target 0x7f06001e
 int style AppBaseTheme 0x7f090000
 int style AppTheme 0x7f090001
 int[] styleable AdsAttrs { 0x7f010000, 0x7f010001 }
