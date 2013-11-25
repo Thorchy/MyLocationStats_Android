@@ -3,9 +3,11 @@
 
     <string name="app_name">MyLocationStats</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
     <string name="title_activity_map">MapActivity</string>
     <string name="title_activity_stats">StatsActivity</string>
     <string name="title_activity_target">TargetActivity</string>
+    <string name="most_visited">Most visited</string>
+    <string name="last_visited">Last visited</string>
+    <string name="closest_target">Closest target</string>
 
 </resources>
