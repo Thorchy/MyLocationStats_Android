@@ -52,19 +52,13 @@ public class MyLocationActivity extends Activity {
 	}
 
 	private void initComponents() {
-		 locationManager = (LocationManager) this
-				.getSystemService(Context.LOCATION_SERVICE);
-		gMap = ((MapFragment) getFragmentManager().findFragmentById(R.id.map))
-				.getMap();
+		 locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+		gMap = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
 		gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(0, 0), 15));
 	}
 
 	private void getLocation() {
-		// Define a listener that responds to location updates
 		locationListener = new MyLocation(this);
-
-		// Register the listener with the Location Manager to receive location
-		// updates
 		locationManager.requestLocationUpdates(locationProvider, 0, 0, locationListener);
 	}
 	
