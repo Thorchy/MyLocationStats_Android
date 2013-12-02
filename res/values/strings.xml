@@ -9,5 +9,7 @@
     <string name="most_visited">Most visited</string>
     <string name="last_visited">Last visited</string>
     <string name="closest_target">Closest target</string>
+    <string name="title_activity_overview">OverviewActivity</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>

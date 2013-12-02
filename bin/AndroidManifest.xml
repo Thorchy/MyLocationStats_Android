@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="10"
+        android:minSdkVersion="11"
         android:targetSdkVersion="19" />
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -38,15 +38,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="mobile.mylocationstats.MapActivity"
+            android:name="mobile.mylocationstats.MyMapFragment"
             android:label="@string/title_activity_map" >
         </activity>
         <activity
-            android:name="mobile.mylocationstats.StatsActivity"
+            android:name="mobile.mylocationstats.StatsFragment"
             android:label="@string/title_activity_stats" >
         </activity>
         <activity
-            android:name="mobile.mylocationstats.TargetActivity"
+            android:name="mobile.mylocationstats.TargetFragment"
             android:label="@string/title_activity_target" >
         </activity>
 
@@ -56,6 +56,11 @@
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyB3Rbl0ag4jNyTpzbqoKuYIFwXy_LfYfrQ" />
+
+        <activity
+            android:name="mobile.mylocationstats.OverviewFragment"
+            android:label="@string/title_activity_overview" >
+        </activity>
     </application>
 
 </manifest>
