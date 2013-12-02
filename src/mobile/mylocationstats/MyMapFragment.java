@@ -1,5 +1,8 @@
 package mobile.mylocationstats;
 
+import java.util.Observable;
+import java.util.Observer;
+
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
@@ -10,11 +13,12 @@ import android.location.Location;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class MyMapFragment extends Fragment {
+public class MyMapFragment extends Fragment implements Observer {
 
 	private GoogleMap gMap;
 
@@ -30,10 +34,12 @@ public class MyMapFragment extends Fragment {
 	}
 
 	public void updateLocation(Location location) {
-		LatLng currentPosition = new LatLng(location.getLatitude(), location.getLongitude());
-		gMap.clear();
-		gMap.addMarker(new MarkerOptions().position(currentPosition).title("You"));
-		gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentPosition, 15));
+		if (gMap != null) {
+			LatLng currentPosition = new LatLng(location.getLatitude(), location.getLongitude());
+			gMap.clear();
+			gMap.addMarker(new MarkerOptions().position(currentPosition).title("You"));
+			gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentPosition, 15));
+		}
 	}
 
 	@Override
@@ -43,6 +49,12 @@ public class MyMapFragment extends Fragment {
 		FragmentTransaction ft = getActivity().getFragmentManager().beginTransaction();
 		ft.remove(fragment);
 		ft.commit();
+	}
+
+	@Override
+	public void update(Observable observable, Object data) {
+		Log.v("MYLOCATION", "It works!");
+		updateLocation((Location) data);
 	}
 
 }

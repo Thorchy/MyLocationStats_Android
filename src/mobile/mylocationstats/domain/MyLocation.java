@@ -1,25 +1,20 @@
 package mobile.mylocationstats.domain;
 
-import mobile.mylocationstats.MyLocationActivity;
-import android.content.Context;
+import java.util.Observable;
+
 import android.location.Location;
 import android.location.LocationListener;
 import android.os.Bundle;
 
 
-public class MyLocation implements LocationListener {
+public class MyLocation extends Observable implements LocationListener {
 	
-	private Context context;
-		
-	public MyLocation(Context context) {
-		this.context = context;
-	}
+	private float lastAccuracy = Float.MAX_VALUE;
 
 	public void onLocationChanged(Location location) {
-		// Called when a new location is found by the network location
-		// provider.
-		//TODO: Change to observer!
-		((MyLocationActivity) context).updateLocation(location);
+		if(location.getAccuracy() < lastAccuracy && location.hasAccuracy()) {
+			notifyObservers(location);
+		}
 	}
 
 	public void onStatusChanged(String provider, int status, Bundle extras) {
@@ -29,6 +24,18 @@ public class MyLocation implements LocationListener {
 	}
 
 	public void onProviderDisabled(String provider) {
+	}
+	
+	public void notifyLastLocation(Location location) {
+		if(location.getAccuracy() < lastAccuracy && location.hasAccuracy()) {
+			notifyObservers(location);
+		}
+	}
+	
+	@Override
+	public void notifyObservers(Object data) {
+		setChanged();
+		super.notifyObservers(data);
 	}
 
 }
