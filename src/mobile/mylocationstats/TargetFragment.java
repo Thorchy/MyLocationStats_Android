@@ -3,8 +3,11 @@ package mobile.mylocationstats;
 import java.util.Calendar;
 
 import android.os.Bundle;
+import android.app.DatePickerDialog;
+import android.app.DatePickerDialog.OnDateSetListener;
 import android.app.Fragment;
 import android.app.TimePickerDialog;
+import android.app.TimePickerDialog.OnTimeSetListener;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +15,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.DatePicker;
 import android.widget.TimePicker;
 
 public class TargetFragment extends Fragment {
@@ -34,7 +38,7 @@ public class TargetFragment extends Fragment {
 	}
 	
 	public void showDateDialog() {
-		TimePickerDialog tp1 = new TimePickerDialog(getView().getContext(), new CalendarListener(), calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), true);
+		DatePickerDialog tp1 = new DatePickerDialog(getActivity(), new CalendarListener(), calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
 	    tp1.show();
 	}
 	
@@ -44,14 +48,11 @@ public class TargetFragment extends Fragment {
 	    Log.d("MY LOCATION", "Woohoo!");
 	}
 	
-	private class CalendarListener implements OnClickListener {
+	private class CalendarListener implements OnDateSetListener {
 
 		@Override
-		public void onClick(View v) {
-			
+		public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+			Log.d("MY LOCATION", year + " " + monthOfYear + " " + dayOfMonth);
 		}
-		
 	}
-	
-
 }
