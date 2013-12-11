@@ -27,5 +27,10 @@ public class Target {
 	public Location getLocation() {
 		return location;
 	}
+	
+	@Override
+	public String toString() {
+		return location.getName() + " (" + dueDate.get(Calendar.YEAR) + "-" + dueDate.get(Calendar.MONTH) + "-"  + dueDate.get(Calendar.DAY_OF_MONTH)  + "): " + getX() + "; " + getY();
+	}
 
 }

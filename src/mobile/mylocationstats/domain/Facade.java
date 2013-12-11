@@ -4,13 +4,14 @@ import java.util.List;
 
 import mobile.mylocationstats.db.AndroidDatabase;
 import mobile.mylocationstats.db.Database;
+import mobile.mylocationstats.db.MemoryDatabase;
 
 public class Facade {
 	
 	private Database localDatabase;
 	
 	public Facade() {
-		localDatabase = AndroidDatabase.getInstance();
+		localDatabase = MemoryDatabase.getInstance();
 	}
 	
 	public String getMostVisited() {
@@ -19,7 +20,7 @@ public class Facade {
 		
 		if(locMostVisited != null) {
 			if(locMostVisited.getName() != null) {
-				mv = localDatabase.getMostVisited().getName();
+				mv = locMostVisited.getName();
 			} else {
 				mv = locMostVisited.getX() + "; " + locMostVisited.getY();
 			}
@@ -34,7 +35,7 @@ public class Facade {
 		
 		if(locLastVisited != null) {
 			if(locLastVisited.getName() != null) {
-				lv = localDatabase.getMostVisited().getName();
+				lv = locLastVisited.getName();
 			} else {
 				lv = locLastVisited.getX() + "; " + locLastVisited.getY();
 			}

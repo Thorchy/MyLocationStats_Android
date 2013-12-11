@@ -36,5 +36,10 @@ public class Location {
 	public int getTotalVisited() {
 		return totalVisited;
 	}
+	
+	@Override
+	public String toString() {
+		return name + " (" + totalVisited + "): " + getX() + "; " + getY();
+	}
 
 }

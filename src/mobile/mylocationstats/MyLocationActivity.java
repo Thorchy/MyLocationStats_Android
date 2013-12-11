@@ -59,7 +59,7 @@ public class MyLocationActivity extends Activity {
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 		ActionBar.TabListener tabListener = new ActionBar.TabListener() {
 
-			private Fragment newFragment = new OverviewFragment();
+			Fragment newFragment = new OverviewFragment();
 
 			@Override
 			public void onTabReselected(Tab tab, FragmentTransaction ft) {

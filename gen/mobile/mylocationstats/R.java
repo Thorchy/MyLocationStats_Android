@@ -208,8 +208,8 @@ containing a value of this type.
         public static final int ic_plusone_tall_off_client=0x7f02001c;
     }
     public static final class id {
-        public static final int action_settings=0x7f050013;
-        public static final int btnAddLocation=0x7f050012;
+        public static final int action_settings=0x7f050014;
+        public static final int btnAddLocation=0x7f050013;
         public static final int btnDueDate=0x7f050006;
         public static final int btnSave=0x7f050007;
         public static final int fragment_container=0x7f050008;
@@ -218,7 +218,8 @@ containing a value of this type.
         public static final int lblClosestTarget=0x7f05000e;
         public static final int lblLastVisited=0x7f05000c;
         public static final int lblMostVisited=0x7f05000a;
-        public static final int lvTargets=0x7f050011;
+        public static final int lvLocations=0x7f050011;
+        public static final int lvTargets=0x7f050012;
         public static final int map=0x7f050010;
         public static final int none=0x7f050000;
         public static final int normal=0x7f050001;

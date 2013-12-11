@@ -1,6 +1,9 @@
 package mobile.mylocationstats;
 
+import java.io.IOException;
 import java.util.Calendar;
+import java.util.Locale;
+
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.OnMapLongClickListener;
@@ -12,6 +15,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import mobile.mylocationstats.domain.Facade;
 import mobile.mylocationstats.domain.Target;
 
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
@@ -19,6 +24,7 @@ import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.DatePickerDialog.OnDateSetListener;
 import android.content.Context;
+import android.util.Log;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.TimePicker;
@@ -53,8 +59,19 @@ public class TargetAddActivity extends Activity implements OnDateSetListener, On
 	}
 
 	public void save(View v) {
-		Target target = new Target(new mobile.mylocationstats.domain.Location(marker.getPosition().latitude, marker.getPosition().longitude), dueDate);
+		mobile.mylocationstats.domain.Location loc = new mobile.mylocationstats.domain.Location(marker.getPosition().latitude, marker.getPosition().longitude);
+		
+		Geocoder gc = new Geocoder(this, Locale.getDefault());
+		try {
+			Address a = gc.getFromLocation(loc.getX(), loc.getY(), 1).get(0);
+			loc.setName(a.getThoroughfare());
+		} catch (IOException e) {
+			Log.e("MY LOCATION", e.getMessage());
+		}
+		
+		Target target = new Target(loc, dueDate);
 		facade.addTarget(target);
+		finish();
 	}
 
 	public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
