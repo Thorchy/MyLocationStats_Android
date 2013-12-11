@@ -12,5 +12,8 @@
     <string name="title_activity_overview">OverviewActivity</string>
     <string name="dueDate">Due date</string>
     <string name="save">Save</string>
+    <string name="title_activity_target_overview_fragment">TargetOverviewFragment</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="addLocation">Add Location</string>
 
 </resources>

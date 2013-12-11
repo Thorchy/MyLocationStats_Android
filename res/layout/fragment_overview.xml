@@ -23,6 +23,7 @@
             android:id="@+id/txtMostVisited"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingLeft="25dp"
             android:text="" />
     </LinearLayout>
 
@@ -40,6 +41,7 @@
             android:id="@+id/txtLastVisited"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingLeft="30dp"
             android:text="" />
     </LinearLayout>
 
@@ -57,6 +59,7 @@
             android:id="@+id/txtClosestTarget"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
             android:text="" />
     </LinearLayout>
 

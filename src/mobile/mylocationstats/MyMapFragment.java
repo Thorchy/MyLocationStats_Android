@@ -13,7 +13,6 @@ import android.location.Location;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,7 +23,7 @@ public class MyMapFragment extends Fragment implements Observer {
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		View v = inflater.inflate(R.layout.activity_map, container, false);
+		View v = inflater.inflate(R.layout.fragment_map, container, false);
 		initComponents();
 		return v;
 	}
@@ -53,7 +52,6 @@ public class MyMapFragment extends Fragment implements Observer {
 
 	@Override
 	public void update(Observable observable, Object data) {
-		Log.v("MYLOCATION", "It works!");
 		updateLocation((Location) data);
 	}
 

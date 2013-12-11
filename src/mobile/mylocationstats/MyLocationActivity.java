@@ -12,9 +12,11 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Context;
+import android.content.Intent;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
 
 public class MyLocationActivity extends Activity {
 
@@ -83,7 +85,7 @@ public class MyLocationActivity extends Activity {
 						newFragment = new StatsFragment();
 						break;
 					case TARGETS:
-						newFragment = new TargetFragment();
+						newFragment = new TargetOverviewFragment();
 						break;
 					}
 
@@ -118,5 +120,10 @@ public class MyLocationActivity extends Activity {
 		locationManager.requestLocationUpdates(locationProviderNetwork, 0, 0, locationListener);
 		
 		locationListener.notifyLastLocation(locationManager.getLastKnownLocation(locationProviderNetwork));
+	}
+	
+	public void addLocation(View v) {
+		Intent locationIntent = new Intent(this, TargetAddActivity.class);
+		startActivity(locationIntent);
 	}
 }

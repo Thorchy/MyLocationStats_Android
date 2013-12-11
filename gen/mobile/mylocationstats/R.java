@@ -208,34 +208,37 @@ containing a value of this type.
         public static final int ic_plusone_tall_off_client=0x7f02001c;
     }
     public static final class id {
-        public static final int action_settings=0x7f050011;
-        public static final int btnDueDate=0x7f05000f;
-        public static final int btnSave=0x7f050010;
-        public static final int fragment_container=0x7f050006;
-        public static final int fullMap=0x7f050005;
+        public static final int action_settings=0x7f050013;
+        public static final int btnAddLocation=0x7f050012;
+        public static final int btnDueDate=0x7f050006;
+        public static final int btnSave=0x7f050007;
+        public static final int fragment_container=0x7f050008;
+        public static final int fullMap=0x7f050009;
         public static final int hybrid=0x7f050004;
-        public static final int lblClosestTarget=0x7f05000b;
-        public static final int lblLastVisited=0x7f050009;
-        public static final int lblMostVisited=0x7f050007;
-        public static final int map=0x7f05000d;
+        public static final int lblClosestTarget=0x7f05000e;
+        public static final int lblLastVisited=0x7f05000c;
+        public static final int lblMostVisited=0x7f05000a;
+        public static final int lvTargets=0x7f050011;
+        public static final int map=0x7f050010;
         public static final int none=0x7f050000;
         public static final int normal=0x7f050001;
         public static final int satellite=0x7f050002;
-        public static final int targetMap=0x7f05000e;
+        public static final int targetMap=0x7f050005;
         public static final int terrain=0x7f050003;
-        public static final int txtClosestTarget=0x7f05000c;
-        public static final int txtLastVisited=0x7f05000a;
-        public static final int txtMostVisited=0x7f050008;
+        public static final int txtClosestTarget=0x7f05000f;
+        public static final int txtLastVisited=0x7f05000d;
+        public static final int txtMostVisited=0x7f05000b;
     }
     public static final class integer {
         public static final int google_play_services_version=0x7f070000;
     }
     public static final class layout {
-        public static final int activity_map=0x7f030000;
+        public static final int activity_add_target=0x7f030000;
         public static final int activity_my_location=0x7f030001;
-        public static final int activity_overview=0x7f030002;
-        public static final int activity_stats=0x7f030003;
-        public static final int activity_target=0x7f030004;
+        public static final int fragment_map=0x7f030002;
+        public static final int fragment_overview=0x7f030003;
+        public static final int fragment_stats=0x7f030004;
+        public static final int fragment_target_overview=0x7f030005;
     }
     public static final class menu {
         public static final int map=0x7f0a0000;
@@ -243,9 +246,11 @@ containing a value of this type.
         public static final int overview=0x7f0a0002;
         public static final int stats=0x7f0a0003;
         public static final int target=0x7f0a0004;
+        public static final int target_overview=0x7f0a0005;
     }
     public static final class string {
         public static final int action_settings=0x7f06001b;
+        public static final int addLocation=0x7f060027;
         public static final int app_name=0x7f06001a;
         /**   Title for notification shown when GooglePlayServices needs to be
         enabled for a application to work. [CHAR LIMIT=70] 
@@ -343,6 +348,7 @@ containing a value of this type.
          */
         public static final int common_signin_button_text_long=0x7f060013;
         public static final int dueDate=0x7f060023;
+        public static final int hello_world=0x7f060026;
         public static final int last_visited=0x7f060020;
         public static final int most_visited=0x7f06001f;
         public static final int save=0x7f060024;
@@ -350,6 +356,7 @@ containing a value of this type.
         public static final int title_activity_overview=0x7f060022;
         public static final int title_activity_stats=0x7f06001d;
         public static final int title_activity_target=0x7f06001e;
+        public static final int title_activity_target_overview_fragment=0x7f060025;
     }
     public static final class style {
         /** 
@@ -413,7 +420,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name mobile.mylocationstats:adSize
+          @attr name android:adSize
         */
         public static final int AdsAttrs_adSize = 0;
         /**
@@ -429,7 +436,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name mobile.mylocationstats:adUnitId
+          @attr name android:adUnitId
         */
         public static final int AdsAttrs_adUnitId = 1;
         /** Attributes that can be used with a MapAttrs.
@@ -485,7 +492,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mobile.mylocationstats:cameraBearing
+          @attr name android:cameraBearing
         */
         public static final int MapAttrs_cameraBearing = 1;
         /**
@@ -499,7 +506,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mobile.mylocationstats:cameraTargetLat
+          @attr name android:cameraTargetLat
         */
         public static final int MapAttrs_cameraTargetLat = 2;
         /**
@@ -513,7 +520,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mobile.mylocationstats:cameraTargetLng
+          @attr name android:cameraTargetLng
         */
         public static final int MapAttrs_cameraTargetLng = 3;
         /**
@@ -527,7 +534,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mobile.mylocationstats:cameraTilt
+          @attr name android:cameraTilt
         */
         public static final int MapAttrs_cameraTilt = 4;
         /**
@@ -541,7 +548,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mobile.mylocationstats:cameraZoom
+          @attr name android:cameraZoom
         */
         public static final int MapAttrs_cameraZoom = 5;
         /**
@@ -561,7 +568,7 @@ containing a value of this type.
 <tr><td><code>terrain</code></td><td>3</td><td></td></tr>
 <tr><td><code>hybrid</code></td><td>4</td><td></td></tr>
 </table>
-          @attr name mobile.mylocationstats:mapType
+          @attr name android:mapType
         */
         public static final int MapAttrs_mapType = 0;
         /**
@@ -575,7 +582,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mobile.mylocationstats:uiCompass
+          @attr name android:uiCompass
         */
         public static final int MapAttrs_uiCompass = 6;
         /**
@@ -589,7 +596,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mobile.mylocationstats:uiRotateGestures
+          @attr name android:uiRotateGestures
         */
         public static final int MapAttrs_uiRotateGestures = 7;
         /**
@@ -603,7 +610,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mobile.mylocationstats:uiScrollGestures
+          @attr name android:uiScrollGestures
         */
         public static final int MapAttrs_uiScrollGestures = 8;
         /**
@@ -617,7 +624,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mobile.mylocationstats:uiTiltGestures
+          @attr name android:uiTiltGestures
         */
         public static final int MapAttrs_uiTiltGestures = 9;
         /**
@@ -631,7 +638,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mobile.mylocationstats:uiZoomControls
+          @attr name android:uiZoomControls
         */
         public static final int MapAttrs_uiZoomControls = 10;
         /**
@@ -645,7 +652,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mobile.mylocationstats:uiZoomGestures
+          @attr name android:uiZoomGestures
         */
         public static final int MapAttrs_uiZoomGestures = 11;
         /**
@@ -659,7 +666,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mobile.mylocationstats:useViewLifecycle
+          @attr name android:useViewLifecycle
         */
         public static final int MapAttrs_useViewLifecycle = 12;
         /**
@@ -673,7 +680,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mobile.mylocationstats:zOrderOnTop
+          @attr name android:zOrderOnTop
         */
         public static final int MapAttrs_zOrderOnTop = 13;
     };
