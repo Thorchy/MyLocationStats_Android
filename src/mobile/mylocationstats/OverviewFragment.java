@@ -4,6 +4,7 @@ import java.util.Observable;
 import java.util.Observer;
 
 import mobile.mylocationstats.domain.Facade;
+import mobile.mylocationstats.domain.Target;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -27,6 +28,7 @@ public class OverviewFragment extends Fragment implements Observer {
 	private TextView mostVisited;
 	private TextView lastVisited;
 	private TextView closestTarget;
+	private boolean init;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -53,11 +55,16 @@ public class OverviewFragment extends Fragment implements Observer {
 		if (gMap != null) {
 			gMap.clear();
 			gMap.addMarker(new MarkerOptions().position(currentPosition).title("You"));
-			gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentPosition, 15));
+			if (!init) {
+				gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentPosition, 15));
+				init = !init;
+			}
 		}
 
 		if (facade != null) {
-			closestTarget.setText(facade.getNearestTarget(new mobile.mylocationstats.domain.Location(location.getLatitude(), location.getLongitude())));
+			Target nearest = facade.getDatabase().getNearestTarget(new mobile.mylocationstats.domain.Location(location.getLatitude(), location.getLongitude()));
+			closestTarget.setText(nearest.getLocation().getName());
+			gMap.addMarker(new MarkerOptions().position(new LatLng(nearest.getLatitude(), nearest.getLongitude())).title("Target"));
 		}
 	}
 

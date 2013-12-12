@@ -7,21 +7,25 @@ import mobile.mylocationstats.db.DatabaseFactory;
 
 public class Facade {
 	
-	private Database localDatabase;
+	private Database database;
 	
 	public Facade() {
-		localDatabase = DatabaseFactory.getDatabase("MEMORY");
+		database = DatabaseFactory.getDatabase("MEMORY");
+	}
+	
+	public Database getDatabase() {
+		return database;
 	}
 	
 	public String getMostVisited() {
-		Location locMostVisited = localDatabase.getMostVisited();
+		Location locMostVisited = database.getMostVisited();
 		String mv = "Nothing visited yet.";
 		
 		if(locMostVisited != null) {
 			if(locMostVisited.getName() != null) {
 				mv = locMostVisited.getName();
 			} else {
-				mv = locMostVisited.getX() + "; " + locMostVisited.getY();
+				mv = locMostVisited.getLatitude() + "; " + locMostVisited.getLongitude();
 			}
 		}
 		
@@ -29,14 +33,14 @@ public class Facade {
 	}
 	
 	public String getLastVisited() {
-		Location locLastVisited = localDatabase.getLastVisited();
+		Location locLastVisited = database.getLastVisited();
 		String lv = "Nothing visited yet.";
 		
 		if(locLastVisited != null) {
 			if(locLastVisited.getName() != null) {
 				lv = locLastVisited.getName();
 			} else {
-				lv = locLastVisited.getX() + "; " + locLastVisited.getY();
+				lv = locLastVisited.getLatitude() + "; " + locLastVisited.getLongitude();
 			}
 		}
 		
@@ -44,14 +48,14 @@ public class Facade {
 	}
 	
 	public String getNearestTarget(Location location) {
-		Target nearestTarget = localDatabase.getNearestTarget(location);
+		Target nearestTarget = database.getNearestTarget(location);
 		String nt = "No targets found.";
 		
 		if(nearestTarget != null) {
 			if(nearestTarget.getLocation().getName() != null) {
 				nt = nearestTarget.getLocation().getName();
 			} else {
-				nt = nearestTarget.getLocation().getX() + "; " + nearestTarget.getLocation().getY();
+				nt = nearestTarget.getLocation().getLatitude() + "; " + nearestTarget.getLocation().getLongitude();
 			}
 		}
 		
@@ -59,14 +63,14 @@ public class Facade {
 	}
 	
 	public List<Location> getAllVisitedLocations() {
-		return localDatabase.getAllLocations();
+		return database.getAllLocations();
 	}
 
 	public List<Target> getAllTargets() {
-		return localDatabase.getAllTargets();
+		return database.getAllTargets();
 	}
 	
 	public void addTarget(Target target) {
-		localDatabase.addTarget(target);
+		database.addTarget(target);
 	}
 }

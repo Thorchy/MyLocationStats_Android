@@ -36,6 +36,7 @@ public class TargetAddActivity extends Activity implements OnDateSetListener, On
 	private Calendar dueDate;
 	private Marker marker;
 	private Facade facade;
+	private boolean init;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -60,15 +61,15 @@ public class TargetAddActivity extends Activity implements OnDateSetListener, On
 
 	public void save(View v) {
 		mobile.mylocationstats.domain.Location loc = new mobile.mylocationstats.domain.Location(marker.getPosition().latitude, marker.getPosition().longitude);
-		
+
 		Geocoder gc = new Geocoder(this, Locale.getDefault());
 		try {
-			Address a = gc.getFromLocation(loc.getX(), loc.getY(), 1).get(0);
+			Address a = gc.getFromLocation(loc.getLatitude(), loc.getLongitude(), 1).get(0);
 			loc.setName(a.getThoroughfare());
 		} catch (IOException e) {
 			Log.e("MY LOCATION", e.getMessage());
 		}
-		
+
 		Target target = new Target(loc, dueDate);
 		facade.addTarget(target);
 		finish();
@@ -83,17 +84,20 @@ public class TargetAddActivity extends Activity implements OnDateSetListener, On
 	public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
 		dueDate.set(year, monthOfYear, dayOfMonth);
 	}
-	
+
 	private void getLocation() {
 		LocationManager locManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
 		updateLocation(locManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER));
 	}
-	
+
 	public void updateLocation(Location location) {
 		if (gMap != null) {
 			LatLng currentPosition = new LatLng(location.getLatitude(), location.getLongitude());
 			marker = gMap.addMarker(new MarkerOptions().position(currentPosition).title("New Target"));
-			gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentPosition, 15));
+			if (!init) {
+				gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentPosition, 15));
+				init = !init;
+			}
 		}
 	}
 

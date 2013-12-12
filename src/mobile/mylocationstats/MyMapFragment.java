@@ -3,6 +3,9 @@ package mobile.mylocationstats;
 import java.util.Observable;
 import java.util.Observer;
 
+import mobile.mylocationstats.domain.Facade;
+import mobile.mylocationstats.domain.Target;
+
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
@@ -20,6 +23,8 @@ import android.view.ViewGroup;
 public class MyMapFragment extends Fragment implements Observer {
 
 	private GoogleMap gMap;
+	private boolean init;
+	private Facade facade;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -29,6 +34,7 @@ public class MyMapFragment extends Fragment implements Observer {
 	}
 
 	private void initComponents() {
+		facade = new Facade();
 		gMap = ((MapFragment) getFragmentManager().findFragmentById(R.id.fullMap)).getMap();
 	}
 
@@ -37,7 +43,16 @@ public class MyMapFragment extends Fragment implements Observer {
 			LatLng currentPosition = new LatLng(location.getLatitude(), location.getLongitude());
 			gMap.clear();
 			gMap.addMarker(new MarkerOptions().position(currentPosition).title("You"));
-			gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentPosition, 15));
+			
+			if (!init) {
+				gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentPosition, 15));
+				init = !init;
+			}
+			
+			if (facade != null) {
+				Target nearest = facade.getDatabase().getNearestTarget(new mobile.mylocationstats.domain.Location(location.getLatitude(), location.getLongitude()));
+				gMap.addMarker(new MarkerOptions().position(new LatLng(nearest.getLatitude(), nearest.getLongitude())).title("Target"));
+			}
 		}
 	}
 

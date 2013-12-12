@@ -4,16 +4,25 @@ import java.util.Calendar;
 
 public class Location {
 	
+	private long id;
 	private String name;
-	private double x;
-	private double y;
+	private double latitude;
+	private double longitude;
 	private int totalVisited;
 	private Calendar lastVisited;
 	
-	public Location(double x, double  y) {
-		this.x = x;
-		this.y = y;
+	public Location(double latitude, double  longitude) {
+		this.latitude = latitude;
+		this.longitude = longitude;
 		lastVisited = Calendar.getInstance();
+	}
+	
+	public void setId(long id) {
+		this.id = id;
+	}
+	
+	public long getId() {
+		return id;
 	}
 	
 	public void setName(String name) {
@@ -24,12 +33,12 @@ public class Location {
 		return name;
 	}
 	
-	public double getX() {
-		return x;
+	public double getLatitude() {
+		return latitude;
 	}
 	
-	public double getY() {
-		return y;
+	public double getLongitude() {
+		return longitude;
 	}
 	
 	
@@ -54,12 +63,19 @@ public class Location {
 	}
 	
 	public String getCoordinates() {
-		return getX() + ";" + getY();
+		return getLatitude() + ";" + getLongitude();
 	}
 	
 	@Override
 	public String toString() {
-		return name + " (" + totalVisited + "): " + getX() + "; " + getY();
+		return name + " (" + totalVisited + "): " + getLatitude() + "; " + getLongitude();
+	}
+	
+	public float distanceFrom(Location location) {
+		float[] distance = new float[3];
+		android.location.Location.distanceBetween(getLatitude(), getLongitude(), location.getLatitude(), location.getLongitude(), distance);
+	
+		return distance[2];
 	}
 
 }
