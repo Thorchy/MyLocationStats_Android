@@ -22,6 +22,7 @@ public class MemoryDatabase implements Database {
 		l1.setName("Loc 1");
 		
 		Location l2 = new Location(47,6);
+		l2.setName("Loc 2");
 		
 		locations.add(l1);
 		locations.add(l2);

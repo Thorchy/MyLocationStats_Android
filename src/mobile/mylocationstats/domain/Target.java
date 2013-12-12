@@ -28,9 +28,13 @@ public class Target {
 		return location;
 	}
 	
+	public String getDueDateFormatted() {
+		return dueDate.get(Calendar.YEAR) + "-" + (dueDate.get(Calendar.MONTH) + 1) + "-" + dueDate.get(Calendar.DAY_OF_MONTH); 
+	}
+	
 	@Override
 	public String toString() {
-		return location.getName() + " (" + dueDate.get(Calendar.YEAR) + "-" + dueDate.get(Calendar.MONTH) + "-"  + dueDate.get(Calendar.DAY_OF_MONTH)  + "): " + getX() + "; " + getY();
+		return location.getName() + " (" + dueDate.get(Calendar.YEAR) + "-" + (dueDate.get(Calendar.MONTH) + 1) + "-"  + dueDate.get(Calendar.DAY_OF_MONTH)  + "): " + getX() + "; " + getY();
 	}
 
 }

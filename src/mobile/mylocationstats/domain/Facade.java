@@ -2,16 +2,15 @@ package mobile.mylocationstats.domain;
 
 import java.util.List;
 
-import mobile.mylocationstats.db.AndroidDatabase;
 import mobile.mylocationstats.db.Database;
-import mobile.mylocationstats.db.MemoryDatabase;
+import mobile.mylocationstats.db.DatabaseFactory;
 
 public class Facade {
 	
 	private Database localDatabase;
 	
 	public Facade() {
-		localDatabase = MemoryDatabase.getInstance();
+		localDatabase = DatabaseFactory.getDatabase("MEMORY");
 	}
 	
 	public String getMostVisited() {
