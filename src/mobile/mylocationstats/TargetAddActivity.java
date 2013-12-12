@@ -27,13 +27,13 @@ import android.content.Context;
 import android.util.Log;
 import android.view.View;
 import android.widget.DatePicker;
-import android.widget.TimePicker;
+import android.widget.TextView;
 
 public class TargetAddActivity extends Activity implements OnDateSetListener, OnMapLongClickListener {
 
 	private GoogleMap gMap;
-	private Calendar calendar;
 	private Calendar dueDate;
+	private TextView txtDueDate;
 	private Marker marker;
 	private Facade facade;
 	private boolean init;
@@ -47,15 +47,16 @@ public class TargetAddActivity extends Activity implements OnDateSetListener, On
 
 	private void initComponents() {
 		facade = new Facade();
-		calendar = Calendar.getInstance();
 		dueDate = Calendar.getInstance();
+		txtDueDate = (TextView) findViewById(R.id.txtDueDate);
+		txtDueDate.setText(formatCalendar(dueDate));
 		gMap = ((MapFragment) getFragmentManager().findFragmentById(R.id.targetMap)).getMap();
 		gMap.setOnMapLongClickListener(this);
 		getLocation();
 	}
 
 	public void showDateDialog(View v) {
-		DatePickerDialog tp1 = new DatePickerDialog(this, this, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
+		DatePickerDialog tp1 = new DatePickerDialog(this, this, dueDate.get(Calendar.YEAR), dueDate.get(Calendar.MONTH), dueDate.get(Calendar.DAY_OF_MONTH));
 		tp1.show();
 	}
 
@@ -75,14 +76,10 @@ public class TargetAddActivity extends Activity implements OnDateSetListener, On
 		finish();
 	}
 
-	public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-		calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
-		calendar.set(Calendar.MINUTE, minute);
-	}
-
 	@Override
 	public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
 		dueDate.set(year, monthOfYear, dayOfMonth);
+		txtDueDate.setText(formatCalendar(dueDate));
 	}
 
 	private void getLocation() {
@@ -104,6 +101,10 @@ public class TargetAddActivity extends Activity implements OnDateSetListener, On
 	@Override
 	public void onMapLongClick(LatLng point) {
 		marker.setPosition(point);
+	}
+	
+	private String formatCalendar(Calendar calendar) {
+		return calendar.get(Calendar.YEAR) + "-" + (calendar.get(Calendar.MONTH) + 1) + "-" + calendar.get(Calendar.DAY_OF_MONTH); 
 	}
 
 }
