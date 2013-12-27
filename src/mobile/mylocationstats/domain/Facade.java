@@ -1,6 +1,9 @@
 package mobile.mylocationstats.domain;
 
+import java.util.Calendar;
 import java.util.List;
+
+import android.content.Context;
 
 import mobile.mylocationstats.db.Database;
 import mobile.mylocationstats.db.DatabaseFactory;
@@ -9,8 +12,9 @@ public class Facade {
 	
 	private Database database;
 	
-	public Facade() {
-		database = DatabaseFactory.getDatabase("MEMORY");
+	public Facade(Context context) {
+		//MEMORY or ANDROID
+		database = DatabaseFactory.getDatabase("ANDROID", context);
 	}
 	
 	public Database getDatabase() {
@@ -72,5 +76,9 @@ public class Facade {
 	
 	public void addTarget(Target target) {
 		database.addTarget(target);
+	}
+	
+	public void checkVisited(android.location.Location location) {
+		database.checkVisited(new Location(location.getLatitude(), location.getLongitude()), location.getTime());
 	}
 }

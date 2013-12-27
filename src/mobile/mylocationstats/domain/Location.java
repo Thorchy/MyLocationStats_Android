@@ -75,7 +75,7 @@ public class Location {
 		float[] distance = new float[3];
 		android.location.Location.distanceBetween(getLatitude(), getLongitude(), location.getLatitude(), location.getLongitude(), distance);
 	
-		return distance[2];
+		return distance[0];
 	}
 
 }

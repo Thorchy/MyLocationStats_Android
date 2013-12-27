@@ -33,7 +33,7 @@ public class TargetOverviewFragment extends Fragment {
 	}
 
 	private void initComponents() {
-		facade = new Facade();
+		facade = new Facade(getActivity());
 		lvTargets = (ListView) v.findViewById(R.id.lvTargets);
 	}
 	

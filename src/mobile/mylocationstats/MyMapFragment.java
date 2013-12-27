@@ -34,7 +34,7 @@ public class MyMapFragment extends Fragment implements Observer {
 	}
 
 	private void initComponents() {
-		facade = new Facade();
+		facade = new Facade(getActivity());
 		gMap = ((MapFragment) getFragmentManager().findFragmentById(R.id.fullMap)).getMap();
 	}
 
@@ -43,15 +43,26 @@ public class MyMapFragment extends Fragment implements Observer {
 			LatLng currentPosition = new LatLng(location.getLatitude(), location.getLongitude());
 			gMap.clear();
 			gMap.addMarker(new MarkerOptions().position(currentPosition).title("You"));
-			
+
 			if (!init) {
 				gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentPosition, 15));
 				init = !init;
 			}
-			
+
 			if (facade != null) {
 				Target nearest = facade.getDatabase().getNearestTarget(new mobile.mylocationstats.domain.Location(location.getLatitude(), location.getLongitude()));
-				gMap.addMarker(new MarkerOptions().position(new LatLng(nearest.getLatitude(), nearest.getLongitude())).title("Target"));
+
+				if (nearest != null && nearest.getLocation() != null) {
+					gMap.addMarker(new MarkerOptions().position(new LatLng(nearest.getLatitude(), nearest.getLongitude())).title("Closest target"));
+				}
+				
+				for(mobile.mylocationstats.domain.Location loc : facade.getDatabase().getAllLocations()) {
+					gMap.addMarker(new MarkerOptions().position(new LatLng(loc.getLatitude(), loc.getLongitude())).title("Already visited"));
+				}
+				
+				for(Target target : facade.getDatabase().getAllTargets()) {
+					gMap.addMarker(new MarkerOptions().position(new LatLng(target.getLatitude(), target.getLongitude())).title("Target"));
+				}
 			}
 		}
 	}
@@ -67,6 +78,9 @@ public class MyMapFragment extends Fragment implements Observer {
 
 	@Override
 	public void update(Observable observable, Object data) {
+		if (facade != null) {
+			facade.checkVisited((Location) data);
+		}
 		updateLocation((Location) data);
 	}
 

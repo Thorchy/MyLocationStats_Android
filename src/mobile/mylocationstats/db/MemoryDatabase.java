@@ -6,6 +6,7 @@ import java.util.List;
 
 import mobile.mylocationstats.domain.Location;
 import mobile.mylocationstats.domain.Target;
+import mobile.mylocationstats.domain.Visit;
 
 public class MemoryDatabase implements Database {
 
@@ -43,7 +44,7 @@ public class MemoryDatabase implements Database {
 	}
 
 	@Override
-	public Location getLocation(int id) {
+	public Location getLocation(long id) {
 		Location location = null;
 
 		for (Location tempLocation : locations) {
@@ -66,12 +67,12 @@ public class MemoryDatabase implements Database {
 	}
 
 	@Override
-	public void removeLocation(int id) {
+	public void removeLocation(long id) {
 		locations.remove(getLocation(id));
 	}
 
 	@Override
-	public Target getTarget(int id) {
+	public Target getTarget(long id) {
 		Target target = null;
 
 		for (Target tempTarget : targets) {
@@ -89,8 +90,30 @@ public class MemoryDatabase implements Database {
 	}
 
 	@Override
-	public void removeTarget(int id) {
+	public void removeTarget(long id) {
 		targets.remove(getTarget(id));
+	}
+	
+	@Override
+	public Visit getVisit(long id) {
+		return null;
+	}
+	
+	@Override
+	public void addVisit(Visit visit) {
+		
+	}
+	
+	@Override
+	public int getAmountVisited(long id) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public Calendar getLastVisited(long id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
@@ -133,6 +156,12 @@ public class MemoryDatabase implements Database {
 		}
 
 		return nearest;
+	}
+
+	@Override
+	public void checkVisited(Location location, long visited) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

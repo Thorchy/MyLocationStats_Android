@@ -40,7 +40,7 @@ public class OverviewFragment extends Fragment implements Observer {
 
 	private void initComponents(View v) {
 		gMap = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
-		facade = new Facade();
+		facade = new Facade(getActivity());
 
 		mostVisited = (TextView) v.findViewById(R.id.txtMostVisited);
 		lastVisited = (TextView) v.findViewById(R.id.txtLastVisited);
@@ -63,8 +63,12 @@ public class OverviewFragment extends Fragment implements Observer {
 
 		if (facade != null) {
 			Target nearest = facade.getDatabase().getNearestTarget(new mobile.mylocationstats.domain.Location(location.getLatitude(), location.getLongitude()));
-			closestTarget.setText(nearest.getLocation().getName());
-			gMap.addMarker(new MarkerOptions().position(new LatLng(nearest.getLatitude(), nearest.getLongitude())).title("Target"));
+			if (nearest != null && nearest.getLocation() != null) {
+				closestTarget.setText(nearest.getLocation().getName());
+				gMap.addMarker(new MarkerOptions().position(new LatLng(nearest.getLatitude(), nearest.getLongitude())).title("Target"));
+			} else {
+				closestTarget.setText("No nearest target found.");
+			}
 		}
 	}
 
@@ -79,6 +83,9 @@ public class OverviewFragment extends Fragment implements Observer {
 
 	@Override
 	public void update(Observable observable, Object data) {
+		if (facade != null) {
+			facade.checkVisited((Location) data);
+		}
 		updateLocation((Location) data);
 	}
 }

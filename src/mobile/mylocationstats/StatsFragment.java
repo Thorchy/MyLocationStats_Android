@@ -27,7 +27,7 @@ public class StatsFragment extends Fragment {
     }
 	
 	private void initComponents(View v) {
-		facade = new Facade();
+		facade = new Facade(getActivity());
 		lvLocations = (ListView) v.findViewById(R.id.lvLocations);	
 		lvLocations.setAdapter(new StatisticsBaseAdapter(v.getContext(), (ArrayList<Location>) facade.getAllVisitedLocations()));
 	}
