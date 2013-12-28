@@ -281,7 +281,6 @@ public class AndroidDatabase implements Database {
 		Target nearest = null;
 
 		for (Target target : getAllTargets()) {
-
 			distance = target.getLocation().distanceFrom(location);
 			if (distance < meters) {
 				nearest = target;
@@ -290,8 +289,11 @@ public class AndroidDatabase implements Database {
 		}
 
 		if (meters < 100) {
+			Log.d("MYLOCATION", "Getting close to " + nearest.getLocation().getName() + " | " + meters);
 			addVisit(new Visit(nearest.getLocation(), Calendar.getInstance()));
 			removeTarget(nearest.getId());
+		} else {
+			Log.d("MYLOCATION", "Still too far away: " + nearest.getLocation().getName() + " | " + meters);
 		}
 
 		return nearest;
@@ -304,7 +306,6 @@ public class AndroidDatabase implements Database {
 		Location nearest = null;
 
 		for (Location l : getAllLocations()) {
-
 			distance = l.distanceFrom(location);
 			if (distance < meters) {
 				nearest = l;
