@@ -15,5 +15,6 @@
     <string name="title_activity_target_overview_fragment">TargetOverviewFragment</string>
     <string name="hello_world">Hello world!</string>
     <string name="addLocation">Add Location</string>
+    <string name="checkIn">Check in</string>
 
 </resources>

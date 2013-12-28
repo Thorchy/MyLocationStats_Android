@@ -46,6 +46,8 @@ public class AndroidDatabase implements Database {
 			location.setLastVisited(getLastVisited(location.getId()));
 			location.setTotalVisited(getAmountVisited(location.getId()));
 		}
+		
+		db.close();
 
 		return location;
 	}
@@ -60,6 +62,7 @@ public class AndroidDatabase implements Database {
 		values.put("longitude", location.getLongitude());
 
 		db.update("locations", values, "id=?", new String[] { String.valueOf(location.getId()) });
+		db.close();
 	}
 
 	@Override
@@ -105,6 +108,8 @@ public class AndroidDatabase implements Database {
 			target = new Target(location, cal);
 			target.setId(cursor.getInt(0));
 		}
+		
+		db.close();
 
 		return target;
 	}
@@ -141,12 +146,11 @@ public class AndroidDatabase implements Database {
 
 	@Override
 	public void addVisit(Visit visit) {
-		SQLiteDatabase db = dbHandler.getWritableDatabase();
-
 		if (visit.getLocation().getId() == 0) {
 			addLocation(visit.getLocation());
 		}
 
+		SQLiteDatabase db = dbHandler.getWritableDatabase();
 		ContentValues values = new ContentValues();
 		values.put("location_id", visit.getLocation().getId());
 		values.put("visited_on", visit.getVisitedOn().getTimeInMillis());
@@ -165,6 +169,8 @@ public class AndroidDatabase implements Database {
 			cursor.moveToFirst();
 			amount = cursor.getInt(0);
 		}
+		
+		db.close();
 
 		return amount;
 	}
@@ -180,6 +186,8 @@ public class AndroidDatabase implements Database {
 			lastVisited = Calendar.getInstance();
 			lastVisited.setTimeInMillis(cursor.getLong(0));
 		}
+		
+		db.close();
 
 		return lastVisited;
 	}
@@ -202,6 +210,8 @@ public class AndroidDatabase implements Database {
 				locations.add(location);
 			} while (cursor.moveToNext());
 		}
+		
+		db.close();
 
 		return locations;
 	}
@@ -230,6 +240,8 @@ public class AndroidDatabase implements Database {
 				targets.add(target);
 			} while (cursor.moveToNext());
 		}
+		
+		db.close();
 
 		return targets;
 	}
@@ -250,6 +262,8 @@ public class AndroidDatabase implements Database {
 			location.setLastVisited(getLastVisited(location.getId()));
 			location.setTotalVisited(getAmountVisited(location.getId()));
 		}
+		
+		db.close();
 
 		return location;
 	}
@@ -270,6 +284,8 @@ public class AndroidDatabase implements Database {
 			location.setLastVisited(getLastVisited(location.getId()));
 			location.setTotalVisited(getAmountVisited(location.getId()));
 		}
+		
+		db.close();
 
 		return location;
 	}

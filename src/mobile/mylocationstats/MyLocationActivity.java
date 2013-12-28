@@ -1,10 +1,17 @@
 package mobile.mylocationstats;
 
+import java.io.IOException;
+import java.util.Calendar;
+import java.util.Locale;
 import java.util.Observable;
 import java.util.Observer;
 
+import mobile.mylocationstats.db.Database;
+import mobile.mylocationstats.domain.Facade;
+import mobile.mylocationstats.domain.Location;
 import mobile.mylocationstats.domain.MyLocation;
 import mobile.mylocationstats.domain.TabNames;
+import mobile.mylocationstats.domain.Visit;
 
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
@@ -13,10 +20,14 @@ import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Toast;
 
 public class MyLocationActivity extends Activity {
 
@@ -24,6 +35,8 @@ public class MyLocationActivity extends Activity {
 	private MyLocation locationListener = new MyLocation();
 	private String locationProviderGPS;
 	private String locationProviderNetwork;
+	private Facade facade;
+	private Database db;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +44,8 @@ public class MyLocationActivity extends Activity {
 		setContentView(R.layout.activity_my_location);
 		initComponents();
 		getLocation();
+		facade = new Facade(this);
+		db = facade.getDatabase();
 	}
 
 	@Override
@@ -125,5 +140,24 @@ public class MyLocationActivity extends Activity {
 	public void addLocation(View v) {
 		Intent locationIntent = new Intent(this, TargetAddActivity.class);
 		startActivity(locationIntent);
+	}
+	
+	public void checkIn(View v) {
+		android.location.Location loc = locationListener.getLatestLocation();
+		Location visited = new Location(loc.getLatitude(), loc.getLongitude());
+		
+		Geocoder gc = new Geocoder(this, Locale.getDefault());
+		try {
+			Address a = gc.getFromLocation(loc.getLatitude(), loc.getLongitude(), 1).get(0);
+			visited.setName(a.getThoroughfare());
+		} catch (IOException e) {
+			Log.e("MY LOCATION", e.getMessage());
+		}
+		
+		Calendar cal = Calendar.getInstance();
+		cal.setTimeInMillis(loc.getTime());
+		
+		db.addVisit(new Visit(visited, cal));
+		Toast.makeText(this, "Checked in at " + visited.getName(), Toast.LENGTH_LONG).show();
 	}
 }

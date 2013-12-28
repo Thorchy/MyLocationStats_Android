@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.4" icons="true" automaticImage="PNG" always-add-relationships="true" generalizations="true" 
+  realizations="true" associations="true" dependencies="true" nesting-relationships="true">  
+  <class id="1" language="java" name="mobile.mylocationstats.db.DatabaseHandler" project="MyLocationStats" 
+    file="/MyLocationStats/src/mobile/mylocationstats/db/DatabaseHandler.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="250" x="1134" y="1722"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="mobile.mylocationstats.ui.listviews.StatisticsBaseAdapter" 
+    project="MyLocationStats" file="/MyLocationStats/src/mobile/mylocationstats/ui/listviews/StatisticsBaseAdapter.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="280" x="955" y="837"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="mobile.mylocationstats.db.DatabaseFactory" project="MyLocationStats" 
+    file="/MyLocationStats/src/mobile/mylocationstats/db/DatabaseFactory.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="212" x="824" y="1102"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="mobile.mylocationstats.domain.Facade" project="MyLocationStats" 
+    file="/MyLocationStats/src/mobile/mylocationstats/domain/Facade.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="225" width="214" x="1275" y="837"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="mobile.mylocationstats.domain.Target" project="MyLocationStats" 
+    file="/MyLocationStats/src/mobile/mylocationstats/domain/Target.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="279" width="169" x="904" y="2131"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="mobile.mylocationstats.ui.listviews.TargetsBaseAdapter" project="MyLocationStats" 
+    file="/MyLocationStats/src/mobile/mylocationstats/ui/listviews/TargetsBaseAdapter.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="171" width="261" x="633" y="837"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="7" language="java" name="mobile.mylocationstats.domain" project="MyLocationStats" 
+    file="/MyLocationStats/src/mobile/mylocationstats/domain" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="201" x="392" y="837"/>    
+    <display autosize="true" stereotype="true" accessors="true"/>  
+  </package>  
+  <package id="8" language="java" name="mobile.mylocationstats" project="MyLocationStats" 
+    file="/MyLocationStats/src/mobile/mylocationstats" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="156" x="560" y="37"/>    
+    <display autosize="true" stereotype="true" accessors="true"/>  
+  </package>  
+  <class id="9" language="java" name="mobile.mylocationstats.OverviewFragment" project="MyLocationStats" 
+    file="/MyLocationStats/src/mobile/mylocationstats/OverviewFragment.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="261" width="293" x="1510" y="338"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="mobile.mylocationstats.ui.listviews.StatisticsBaseAdapter.ViewHolder" 
+    project="MyLocationStats" file="/MyLocationStats/src/mobile/mylocationstats/ui/listviews/StatisticsBaseAdapter.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="156" x="1097" y="1102"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="mobile.mylocationstats.MyMapFragment" project="MyLocationStats" 
+    file="/MyLocationStats/src/mobile/mylocationstats/MyMapFragment.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="293" x="1843" y="338"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="mobile.mylocationstats.domain.MyLocation" project="MyLocationStats" 
+    file="/MyLocationStats/src/mobile/mylocationstats/domain/MyLocation.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="221" x="1676" y="837"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="13" language="java" name="mobile.mylocationstats.ui.listviews" project="MyLocationStats" 
+    file="/MyLocationStats/src/mobile/mylocationstats/ui/listviews" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="222" x="275" y="338"/>    
+    <display autosize="true" stereotype="true" accessors="true"/>  
+  </package>  
+  <class id="14" language="java" name="mobile.mylocationstats.ui.listviews.TargetsBaseAdapter.ViewHolder" 
+    project="MyLocationStats" file="/MyLocationStats/src/mobile/mylocationstats/ui/listviews/TargetsBaseAdapter.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="156" x="628" y="1102"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="15" language="java" name="mobile.mylocationstats.db" project="MyLocationStats" 
+    file="/MyLocationStats/src/mobile/mylocationstats/db" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="173" x="62" y="338"/>    
+    <display autosize="true" stereotype="true" accessors="true"/>  
+  </package>  
+  <class id="16" language="java" name="mobile.mylocationstats.TargetOverviewFragment" project="MyLocationStats" 
+    file="/MyLocationStats/src/mobile/mylocationstats/TargetOverviewFragment.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="293" x="823" y="338"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="mobile.mylocationstats.db.MemoryDatabase" project="MyLocationStats" 
+    file="/MyLocationStats/src/mobile/mylocationstats/db/MemoryDatabase.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="405" width="191" x="628" y="1277"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="mobile.mylocationstats.domain.Visit" project="MyLocationStats" 
+    file="/MyLocationStats/src/mobile/mylocationstats/domain/Visit.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="225" width="162" x="681" y="2131"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="mobile.mylocationstats.MyLocationActivity" project="MyLocationStats" 
+    file="/MyLocationStats/src/mobile/mylocationstats/MyLocationActivity.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="261" width="208" x="1568" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="mobile.mylocationstats.db.AndroidDatabase" project="MyLocationStats" 
+    file="/MyLocationStats/src/mobile/mylocationstats/db/AndroidDatabase.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="405" width="191" x="1193" y="1277"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <enumeration id="21" language="java" name="mobile.mylocationstats.domain.TabNames" project="MyLocationStats" 
+    file="/MyLocationStats/src/mobile/mylocationstats/domain/TabNames.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="162" x="621" y="338"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <interface id="22" language="java" name="mobile.mylocationstats.db.Database" project="MyLocationStats" 
+    file="/MyLocationStats/src/mobile/mylocationstats/db/Database.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="369" width="191" x="840" y="1722"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="23" language="java" name="mobile.mylocationstats.TargetAddActivity" project="MyLocationStats" 
+    file="/MyLocationStats/src/mobile/mylocationstats/TargetAddActivity.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="459" width="199" x="2218" y="338"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="mobile.mylocationstats.StatsFragment" project="MyLocationStats" 
+    file="/MyLocationStats/src/mobile/mylocationstats/StatsFragment.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="293" x="1177" y="338"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" name="mobile.mylocationstats.domain.Location" project="MyLocationStats" 
+    file="/MyLocationStats/src/mobile/mylocationstats/domain/Location.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="441" width="182" x="979" y="2450"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="26">    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="27" name="locationListener"/>      
+      <multiplicity id="28" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="29">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="30" name="facade"/>      
+      <multiplicity id="31" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="32">    
+    <end type="SOURCE" refId="16" navigable="false">      
+      <attribute id="33" name="facade"/>      
+      <multiplicity id="34" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="35">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="18"/>  
+  </dependency>  
+  <dependency id="36">    
+    <bendpoint x="873" y="2131"/>    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="25"/>  
+  </dependency>  
+  <dependency id="37">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <dependency id="38">    
+    <bendpoint x="1645" y="837"/>    
+    <bendpoint x="1645" y="1102"/>    
+    <bendpoint x="1645" y="1277"/>    
+    <bendpoint x="1645" y="1722"/>    
+    <bendpoint x="1645" y="2131"/>    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="25"/>  
+  </dependency>  
+  <dependency id="39">    
+    <bendpoint x="1561" y="837"/>    
+    <bendpoint x="1540" y="1102"/>    
+    <bendpoint x="1498" y="1277"/>    
+    <bendpoint x="1456" y="1722"/>    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <association id="40">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="41" name="facade"/>      
+      <multiplicity id="42" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="43">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="44" name="location"/>      
+      <multiplicity id="45" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="46">    
+    <bendpoint x="569" y="338"/>    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <dependency id="47">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="11"/>  
+  </dependency>  
+  <dependency id="48">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="21"/>  
+  </dependency>  
+  <nesting id="49">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="14"/>  
+  </nesting>  
+  <dependency id="50">    
+    <bendpoint x="1540" y="837"/>    
+    <bendpoint x="1561" y="1102"/>    
+    <bendpoint x="1561" y="1277"/>    
+    <bendpoint x="1561" y="1722"/>    
+    <bendpoint x="1561" y="2131"/>    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="25"/>  
+  </dependency>  
+  <association id="51">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="52" name="facade"/>      
+      <multiplicity id="53" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="54">    
+    <bendpoint x="548" y="338"/>    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <dependency id="55">    
+    <bendpoint x="1477" y="1102"/>    
+    <bendpoint x="1477" y="1277"/>    
+    <bendpoint x="1435" y="1722"/>    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <association id="56">    
+    <bendpoint x="382" y="1722"/>    
+    <bendpoint x="382" y="2131"/>    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="57" name="locations"/>      
+      <multiplicity id="58" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="59">    
+    <bendpoint x="1103" y="1722"/>    
+    <bendpoint x="1103" y="2131"/>    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="25"/>  
+  </dependency>  
+  <dependency id="60">    
+    <bendpoint x="1948" y="837"/>    
+    <bendpoint x="1948" y="1102"/>    
+    <bendpoint x="1948" y="1277"/>    
+    <bendpoint x="1948" y="1722"/>    
+    <bendpoint x="1948" y="2131"/>    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="25"/>  
+  </dependency>  
+  <dependency id="61">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="23"/>  
+  </dependency>  
+  <dependency id="62">    
+    <bendpoint x="576" y="1722"/>    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="18"/>  
+  </dependency>  
+  <dependency id="63">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <dependency id="64">    
+    <bendpoint x="576" y="1102"/>    
+    <bendpoint x="849" y="1277"/>    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="22"/>  
+  </dependency>  
+  <dependency id="65">    
+    <bendpoint x="527" y="338"/>    
+    <bendpoint x="361" y="837"/>    
+    <bendpoint x="361" y="1102"/>    
+    <bendpoint x="403" y="1277"/>    
+    <bendpoint x="424" y="1722"/>    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <dependency id="66">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="16"/>  
+  </dependency>  
+  <dependency id="67">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <dependency id="68">    
+    <bendpoint x="340" y="837"/>    
+    <bendpoint x="340" y="1102"/>    
+    <bendpoint x="382" y="1277"/>    
+    <bendpoint x="403" y="1722"/>    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <association id="69">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="70" name="androidDatabase"/>      
+      <multiplicity id="71" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="72">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <dependency id="73">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <dependency id="74">    
+    <bendpoint x="298" y="837"/>    
+    <bendpoint x="319" y="1102"/>    
+    <bendpoint x="340" y="1277"/>    
+    <bendpoint x="361" y="1722"/>    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <dependency id="75">    
+    <bendpoint x="256" y="837"/>    
+    <bendpoint x="256" y="1102"/>    
+    <bendpoint x="256" y="1277"/>    
+    <bendpoint x="256" y="1722"/>    
+    <bendpoint x="256" y="2131"/>    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="25"/>  
+  </dependency>  
+  <dependency id="76">    
+    <bendpoint x="1498" y="1102"/>    
+    <bendpoint x="1519" y="1277"/>    
+    <bendpoint x="1540" y="1722"/>    
+    <bendpoint x="1540" y="2131"/>    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="25"/>  
+  </dependency>  
+  <realization id="77">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="22"/>  
+  </realization>  
+  <dependency id="78">    
+    <bendpoint x="319" y="837"/>    
+    <bendpoint x="298" y="1102"/>    
+    <bendpoint x="298" y="1277"/>    
+    <bendpoint x="298" y="1722"/>    
+    <bendpoint x="298" y="2131"/>    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="25"/>  
+  </dependency>  
+  <dependency id="79">    
+    <bendpoint x="1146" y="338"/>    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <dependency id="80">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="13"/>  
+  </dependency>  
+  <dependency id="81">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="24"/>  
+  </dependency>  
+  <association id="82">    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="83" name="location"/>      
+      <multiplicity id="84" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="85">    
+    <bendpoint x="31" y="338"/>    
+    <bendpoint x="31" y="837"/>    
+    <bendpoint x="31" y="1102"/>    
+    <bendpoint x="31" y="1277"/>    
+    <bendpoint x="31" y="1722"/>    
+    <bendpoint x="31" y="2131"/>    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="25"/>  
+  </dependency>  
+  <dependency id="86">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="21"/>  
+  </dependency>  
+  <dependency id="87">    
+    <bendpoint x="1603" y="837"/>    
+    <bendpoint x="1603" y="1102"/>    
+    <bendpoint x="1603" y="1277"/>    
+    <bendpoint x="1603" y="1722"/>    
+    <bendpoint x="1603" y="2131"/>    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="25"/>  
+  </dependency>  
+  <association id="88">    
+    <bendpoint x="775" y="1722"/>    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="89" name="targets"/>      
+      <multiplicity id="90" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="91">    
+    <bendpoint x="1624" y="837"/>    
+    <bendpoint x="1582" y="1102"/>    
+    <bendpoint x="1540" y="1277"/>    
+    <bendpoint x="1498" y="1722"/>    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <dependency id="92">    
+    <bendpoint x="1582" y="837"/>    
+    <bendpoint x="1519" y="1102"/>    
+    <bendpoint x="1435" y="1277"/>    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="22"/>  
+  </dependency>  
+  <association id="93">    
+    <bendpoint x="2187" y="338"/>    
+    <end type="SOURCE" refId="19" navigable="false">      
+      <attribute id="94" name="locationListener"/>      
+      <multiplicity id="95" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="96">    
+    <bendpoint x="277" y="837"/>    
+    <bendpoint x="277" y="1102"/>    
+    <bendpoint x="319" y="1277"/>    
+    <bendpoint x="340" y="1722"/>    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="18"/>  
+  </dependency>  
+  <dependency id="97">    
+    <bendpoint x="1082" y="1722"/>    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <dependency id="98">    
+    <bendpoint x="1927" y="837"/>    
+    <bendpoint x="1624" y="1102"/>    
+    <bendpoint x="1582" y="1277"/>    
+    <bendpoint x="1519" y="1722"/>    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <dependency id="99">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="17"/>  
+  </dependency>  
+  <dependency id="100">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="2"/>  
+  </dependency>  
+  <association id="101">    
+    <bendpoint x="1435" y="1102"/>    
+    <bendpoint x="1456" y="1277"/>    
+    <bendpoint x="1477" y="1722"/>    
+    <bendpoint x="1477" y="2131"/>    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="102" name="searchArrayList"/>      
+      <multiplicity id="103" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="104">    
+    <bendpoint x="1061" y="1722"/>    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="18"/>  
+  </dependency>  
+  <dependency id="105">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <association id="106">    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="107" name="facade"/>      
+      <multiplicity id="108" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="109">    
+    <bendpoint x="870" y="1277"/>    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="22"/>  
+  </dependency>  
+  <realization id="110">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="22"/>  
+  </realization>  
+  <association id="111">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="112" name="dbHandler"/>      
+      <multiplicity id="113" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="114">    
+    <bendpoint x="597" y="1102"/>    
+    <bendpoint x="597" y="1277"/>    
+    <bendpoint x="597" y="1722"/>    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="115" name="targets"/>      
+      <multiplicity id="116" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="117">    
+    <bendpoint x="382" y="1102"/>    
+    <bendpoint x="361" y="1277"/>    
+    <bendpoint x="319" y="1722"/>    
+    <bendpoint x="319" y="2131"/>    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="25"/>  
+  </dependency>  
+  <nesting id="118">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="10"/>  
+  </nesting>  
+  <association id="119">    
+    <bendpoint x="1283" y="1102"/>    
+    <bendpoint x="1141" y="1277"/>    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="120" name="database"/>      
+      <multiplicity id="121" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="122">    
+    <bendpoint x="924" y="837"/>    
+    <bendpoint x="1066" y="1102"/>    
+    <bendpoint x="1414" y="1277"/>    
+    <bendpoint x="1414" y="1722"/>    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <dependency id="123">    
+    <bendpoint x="2166" y="338"/>    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="12"/>  
+  </dependency>  
+  <dependency id="124">    
+    <bendpoint x="1519" y="837"/>    
+    <bendpoint x="1456" y="1102"/>    
+    <bendpoint x="1162" y="1277"/>    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="22"/>  
+  </dependency>  
+  <association id="125">    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="126" name="memoryDatabse"/>      
+      <multiplicity id="127" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="128">    
+    <bendpoint x="590" y="338"/>    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="2"/>  
+  </dependency>  
+  <dependency id="129">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="20"/>  
+  </dependency>  
+  <dependency id="130">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+    accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

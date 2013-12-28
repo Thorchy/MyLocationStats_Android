@@ -10,9 +10,11 @@ import android.os.Bundle;
 public class MyLocation extends Observable implements LocationListener {
 	
 	private float lastAccuracy = Float.MAX_VALUE;
+	private Location location;
 
 	public void onLocationChanged(Location location) {
 		if(location.getAccuracy() < lastAccuracy && location.hasAccuracy()) {
+			this.location = location;
 			notifyObservers(location);
 		}
 	}
@@ -28,6 +30,7 @@ public class MyLocation extends Observable implements LocationListener {
 	
 	public void notifyLastLocation(Location location) {
 		if(location.getAccuracy() < lastAccuracy && location.hasAccuracy()) {
+			this.location = location;
 			notifyObservers(location);
 		}
 	}
@@ -36,6 +39,10 @@ public class MyLocation extends Observable implements LocationListener {
 	public void notifyObservers(Object data) {
 		setChanged();
 		super.notifyObservers(data);
+	}
+	
+	public Location getLatestLocation() {
+		return location;
 	}
 
 }
