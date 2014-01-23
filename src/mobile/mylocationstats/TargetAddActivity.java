@@ -64,7 +64,9 @@ public class TargetAddActivity extends Activity implements OnDateSetListener, On
 	@Override
 	protected void onResume() {
 		super.onResume();
-		locationManager.requestLocationUpdates(locationProviderNetwork, 0, 0, locationListener);
+		if (locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
+			locationManager.requestLocationUpdates(locationProviderNetwork, 0, 0, locationListener);
+		}
 		if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
 			locationManager.requestLocationUpdates(locationProviderGPS, 0, 0, locationListener);
 		}
@@ -110,17 +112,17 @@ public class TargetAddActivity extends Activity implements OnDateSetListener, On
 	private void getLocation() {
 		locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
 
-
 		if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
 			locationProviderGPS = LocationManager.GPS_PROVIDER;
 			locationManager.requestLocationUpdates(locationProviderGPS, 0, 0, locationListener);
 			locationListener.notifyLastLocation(locationManager.getLastKnownLocation(locationProviderGPS));
 		}
 
-		locationProviderNetwork = LocationManager.NETWORK_PROVIDER;
-		locationManager.requestLocationUpdates(locationProviderNetwork, 0, 0, locationListener);
-		
-		locationListener.notifyLastLocation(locationManager.getLastKnownLocation(locationProviderNetwork));
+		if (locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
+			locationProviderNetwork = LocationManager.NETWORK_PROVIDER;
+			locationManager.requestLocationUpdates(locationProviderNetwork, 0, 0, locationListener);
+			locationListener.notifyLastLocation(locationManager.getLastKnownLocation(locationProviderNetwork));
+		}
 	}
 
 	public void updateLocation(Location location) {

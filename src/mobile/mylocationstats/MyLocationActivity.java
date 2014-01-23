@@ -6,6 +6,9 @@ import java.util.Locale;
 import java.util.Observable;
 import java.util.Observer;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesUtil;
+
 import mobile.mylocationstats.db.Database;
 import mobile.mylocationstats.domain.Facade;
 import mobile.mylocationstats.domain.Location;
@@ -16,9 +19,12 @@ import mobile.mylocationstats.domain.Visit;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
@@ -37,11 +43,12 @@ public class MyLocationActivity extends Activity {
 	private String locationProviderNetwork;
 	private Facade facade;
 	private Database db;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_my_location);
+		checkGooglePlayServices();
 		initComponents();
 		getLocation();
 		facade = new Facade(this);
@@ -51,13 +58,19 @@ public class MyLocationActivity extends Activity {
 	@Override
 	protected void onPause() {
 		super.onPause();
-		locationManager.removeUpdates(locationListener);
+		if (locationManager != null) {
+			locationManager.removeUpdates(locationListener);
+		}
 	}
 
 	@Override
 	protected void onResume() {
+		checkGooglePlayServices();
 		super.onResume();
-		locationManager.requestLocationUpdates(locationProviderNetwork, 0, 0, locationListener);
+		if (locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
+			locationManager.requestLocationUpdates(locationProviderNetwork, 0, 0, locationListener);
+		}
+
 		if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
 			locationManager.requestLocationUpdates(locationProviderGPS, 0, 0, locationListener);
 		}
@@ -106,7 +119,7 @@ public class MyLocationActivity extends Activity {
 
 					transaction.replace(R.id.fragment_container, newFragment);
 					transaction.addToBackStack(null);
-					transaction.commit();	
+					transaction.commit();
 				}
 			}
 
@@ -125,27 +138,35 @@ public class MyLocationActivity extends Activity {
 	private void getLocation() {
 		locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
 
+		if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) && !locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
+			Log.d("MY LOCATIONSTATS", "LOL3");
+			new AlertDialog.Builder(this).setTitle("Could not receive a location").setMessage("Please enable GPS or connect to a network provider.").show();
+			finish();
+		}
 
 		if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
 			locationProviderGPS = LocationManager.GPS_PROVIDER;
 			locationManager.requestLocationUpdates(locationProviderGPS, 0, 0, locationListener);
+			locationListener.notifyLastLocation(locationManager.getLastKnownLocation(locationProviderGPS));
 		}
 
-		locationProviderNetwork = LocationManager.NETWORK_PROVIDER;
-		locationManager.requestLocationUpdates(locationProviderNetwork, 0, 0, locationListener);
-		
-		locationListener.notifyLastLocation(locationManager.getLastKnownLocation(locationProviderNetwork));
+		if (locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
+			locationProviderNetwork = LocationManager.NETWORK_PROVIDER;
+			locationManager.requestLocationUpdates(locationProviderNetwork, 0, 0, locationListener);
+			locationListener.notifyLastLocation(locationManager.getLastKnownLocation(locationProviderNetwork));
+		}
+
 	}
-	
+
 	public void addLocation(View v) {
 		Intent locationIntent = new Intent(this, TargetAddActivity.class);
 		startActivity(locationIntent);
 	}
-	
+
 	public void checkIn(View v) {
 		android.location.Location loc = locationListener.getLatestLocation();
 		Location visited = new Location(loc.getLatitude(), loc.getLongitude());
-		
+
 		Geocoder gc = new Geocoder(this, Locale.getDefault());
 		try {
 			Address a = gc.getFromLocation(loc.getLatitude(), loc.getLongitude(), 1).get(0);
@@ -153,11 +174,20 @@ public class MyLocationActivity extends Activity {
 		} catch (IOException e) {
 			Log.e("MY LOCATION", e.getMessage());
 		}
-		
+
 		Calendar cal = Calendar.getInstance();
 		cal.setTimeInMillis(loc.getTime());
-		
+
 		db.addVisit(new Visit(visited, cal));
 		Toast.makeText(this, "Checked in at " + visited.getName(), Toast.LENGTH_LONG).show();
+	}
+
+	public void checkGooglePlayServices() {
+		int resultCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(this);
+
+		if (resultCode != ConnectionResult.SUCCESS) {
+
+			GooglePlayServicesUtil.getErrorDialog(resultCode, this, 1).show();
+		}
 	}
 }
